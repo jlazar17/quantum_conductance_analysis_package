@@ -27,7 +27,7 @@ def makePath(date,fileType):
     return path
 
 def findFileName(binaryFile):
-    _=binaryFile[37:-3]
+    _=binaryFile[:-3]
     fileName=_+'txt'
     return fileName
 
