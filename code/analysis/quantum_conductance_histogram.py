@@ -81,6 +81,7 @@ def main(infileArray,date):
 	dataArray = makeDataArray(infileArray)
 	dataArray = boundData(min, max, dataArray)
 	makeHist(dataArray,path)
+	print('Done!')
 
 if __name__ == '__main__':
     main(args['f'],args['d'])

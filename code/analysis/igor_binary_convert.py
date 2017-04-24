@@ -42,5 +42,6 @@ def main(binaryFileArray,date):
     txtPath=makePath(date,'txt')
     for i in binaryFileArray:
         makeTextFile(i,txtPath,ibwPath)
+	print('Done!')
 
 main(args['f'],args['d'])

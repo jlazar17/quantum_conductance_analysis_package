@@ -107,5 +107,6 @@ def main(eInfiles,cInfiles,date):
 		for j in range(len(cMatrix[1,:])):
 			c,e=makeArraysForPlot(cMatrix[:,j],eArray,10,0.1)
 			generateTrace(e,c,j+1,path,date)
+	print('Done!')
 
 main(args['e'],args['c'],args['d'])
