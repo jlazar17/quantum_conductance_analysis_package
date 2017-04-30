@@ -44,7 +44,7 @@ def makeHist(dataArray,path):
 	plt.xlabel('Conductance (G0)')
 	plt.title('Histogram of measured conductance, truncated from '
 			 +str(args['l'])+' to '+str(args['u']))
-	modestr='the conductance quantum is '+str(modeBinMiddle)[:6]+'G0'
+	modestr='T='+str(modeBinMiddle)[:6]
 	plt.text(1.45, .95*bigCount,modestr,fontsize=14)
 	plt.savefig(path+'conductance_histogram.png')
 
