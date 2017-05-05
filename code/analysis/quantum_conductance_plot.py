@@ -87,10 +87,12 @@ def makeArraysForPlot(conductanceArray,extensionArray,upperBound,lowerBound):
 # MAKES PLOT OF DISTANCE FROM TIP VERSUS CONDUCTANCE
 def generateTrace(extensionArray,conductanceArray,n,path,date):
 	fig=plt.figure()
+	plt.rc('font',**{'family':'sans-serif','sans-serif':['Helvetica']})
+	plt.rc('text', usetex=True)
 	ax=plt.subplot(111)
 	ax.plot(extensionArray, conductanceArray)
 	ax.set_title('Distance vs. conductance')
-	ax.set_ylabel('Conductance (G0)')
+	ax.set_ylabel(r'Conductance (G_{0})')
 	ax.set_xlabel('Distance (nm)')
 	fig.savefig(path+'conductance_trace_'+date+'_'+str(n)+'.png')
 	plt.close()

@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 import argparse
 import os
 import lorentzian as lz
+from matplotlib import rc
 
 # the number of lines in the output file containing data to be used in the 
 # histogram is 10000
@@ -53,12 +54,14 @@ def makeHist(y,path):
 	ub=modeBinMiddle+.25
 	lorentzian,p,FWHM=lz.main((1,modeBinMiddle,bigCount),bins[:-1],n,lb,ub)
 	T=p[1]
+	plt.rc('font',**{'family':'sans-serif','sans-serif':['Helvetica']})
+	plt.rc('text', usetex=True)
 	plt.axvline(x=T, color='red')
 	plt.plot(bins[:-1],lorentzian, 'r')
 	plt.ylabel('Counts')
-	plt.xlabel('Conductance (G0)')
+	plt.xlabel(r'Conductance (G_{0})')
 	plt.title('Histogram of measured conductance, truncated from '
-			 +str(args['l'])+' to '+str(args['u']))
+			 +str(args['l'])+r" to "+str(args['u']))
 	modestr='T='+str(T)[:6]+', FWHM='+str(FWHM)[:6]
 	plt.text(.6*np.amax(bins), .95*bigCount,modestr,fontsize=14)
 	plt.savefig(path+'conductance_histogram.png')
